@@ -1,5 +1,6 @@
 /// <reference path="../../common/_ts/jquery.d.ts" />
 /// <reference path="../../common/_ts/backbone.d.ts" />
+/// <reference path="../../common/_ts/bootstrap.d.ts" />
 
 class MyMenuView extends Backbone.View {
 
@@ -13,6 +14,7 @@ class MyMenuView extends Backbone.View {
 
     initialize() {
         console.log('init');
+        $('.carousel').carousel();
         if (this.model)
             this.listenTo(this.model, "change", this.render);
     }

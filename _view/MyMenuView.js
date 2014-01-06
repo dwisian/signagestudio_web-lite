@@ -1,5 +1,6 @@
 /// <reference path="../../common/_ts/jquery.d.ts" />
 /// <reference path="../../common/_ts/backbone.d.ts" />
+/// <reference path="../../common/_ts/bootstrap.d.ts" />
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -17,6 +18,7 @@ var MyMenuView = (function (_super) {
     }
     MyMenuView.prototype.initialize = function () {
         console.log('init');
+        $('.carousel').carousel();
         if (this.model)
             this.listenTo(this.model, "change", this.render);
     };

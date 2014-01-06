@@ -1,6 +1,7 @@
 /// <reference path="../common/_ts/jquery.d.ts" />
 /// <reference path="../common/_ts/backbone.d.ts" />
 /// <reference path="../common/_ts/lib.d.ts" />
+/// <reference path="../common/_ts/bootstrap.d.ts" />
 /// <reference path="./_model/MenuItemModel.ts" />
 /// <reference path="./_view/MyMenuView.ts" />
 /// <reference path="./_view/AnotherView.ts" />
@@ -24,7 +25,7 @@ class AppRouter extends Backbone.Router {
     initialize() {
         this.menuItemModel = new MenuItemModel({
             id: 1,
-            name: 'aaa',
+            name: 'a123',
             opt: 'hello',
             moreArgs: {
                 x: 1,

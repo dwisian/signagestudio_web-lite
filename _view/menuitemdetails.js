@@ -1,29 +1,27 @@
-/**
- Add block wizard is a UI component which allows selection and insertion of a new component (i.e. QR / RSS ...)
- or a resource to be added to the currently selected timeline_channel
- @class MenuItemDetails
- @constructor
- @return {Object} instantiated AddBlockWizard
- **/
-var MenuItemDetails = Backbone.View.extend({
-
-    initialize: function  () {
+/// <reference path="../../common/_ts/jquery.d.ts" />
+/// <reference path="../../common/_ts/backbone.d.ts" />
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var MenuItemDetails = (function (_super) {
+    __extends(MenuItemDetails, _super);
+    function MenuItemDetails(viewOptions) {
+        _super.call(this, viewOptions);
+    }
+    MenuItemDetails.prototype.initialize = function () {
         this.listenTo(this.model, "change", this.render);
-    },
+    };
 
-    /**
-     Returns this model's attributes as...
-     @method setPlayerData
-     @param {Number} i_playerData
-     @return {Number} Unique clientId.
-     **/
-	render: function () {
-		var markup = '<div>' +
-		'<h1>' + this.model.attributes.name + '</h1>' +
-		'<p><span class="label">' + 'aaa' + '</span></p>' +
-		'</div>'+'<h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>        <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>      <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>';
+    MenuItemDetails.prototype.render = function () {
+        var markup = '<div>' + '<h1>' + this.model.attributes.name + '</h1>' + '<p><span class="label">' + 'aaa' + '</span></p>' + '</div>' + '<h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>        <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>      <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>';
 
-		this.$el.html(markup);
-		return this;
-	}
-});
+        this.$el.html(markup);
+        return this;
+    };
+    return MenuItemDetails;
+})(Backbone.View);
+;
+//# sourceMappingURL=MenuItemDetails.js.map

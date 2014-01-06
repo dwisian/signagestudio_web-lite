@@ -1,5 +1,6 @@
 /// <reference path="../common/_ts/jquery.d.ts" />
 /// <reference path="../common/_ts/backbone.d.ts" />
+/// <reference path="../common/_ts/lib.d.ts" />
 /// <reference path="./_view/MenuItemView.ts" />
 /// <reference path="./_view/MenuItemModel.ts" />
 
@@ -39,7 +40,7 @@ class AppRouter extends Backbone.Router {
         var self = this;
         $('#app').fadeOut(function () {
             self.menuItemModel.set('name', item);
-            $('#app').html(self.menuItemView.el);
+            // $('#app').html(self.menuItemView.el);
             $('#app').fadeIn();
         });
     }

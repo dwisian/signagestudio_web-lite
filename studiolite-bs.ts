@@ -1,8 +1,11 @@
 /// <reference path="../common/_ts/jquery.d.ts" />
 /// <reference path="../common/_ts/backbone.d.ts" />
 /// <reference path="../common/_ts/lib.d.ts" />
+/// <reference path="./_model/MenuItemModel.ts" />
 /// <reference path="./_view/MenuItemView.ts" />
-/// <reference path="./_view/MenuItemModel.ts" />
+/// <reference path="./_view/AnotherView.ts" />
+
+console.log('11111111111111111');
 
 class AppRouter extends Backbone.Router {
 
@@ -26,6 +29,8 @@ class AppRouter extends Backbone.Router {
             el: '#MyMenu',
             model: this.menuItemModel
         });
+        var anotherView:AnotherView = new AnotherView();
+        anotherView.showView();
     }
 
     list() {

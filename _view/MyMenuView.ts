@@ -1,17 +1,24 @@
 /// <reference path="../../common/_ts/jquery.d.ts" />
 /// <reference path="../../common/_ts/backbone.d.ts" />
-/// <reference path="../../common/_ts/lib.d.ts" />
 
-class MenuItemView extends Backbone.View {
+class MyMenuView extends Backbone.View {
 
     constructor(options?:any) {
-        this.el = options.el;
-        this.model = options.model;
+        if (this.el)
+            this.el = options.el;
+        if (this.model)
+            this.model = options.model;
         super(options);
     }
 
     initialize() {
-        this.listenTo(this.model, "change", this.render);
+        console.log('init');
+        if (this.model)
+            this.listenTo(this.model, "change", this.render);
+    }
+
+    showView(){
+        console.log('show view')
     }
 
     render():Backbone.View {
@@ -23,4 +30,3 @@ class MenuItemView extends Backbone.View {
         return this;
     }
 }
-

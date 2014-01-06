@@ -2,7 +2,7 @@
 /// <reference path="../common/_ts/backbone.d.ts" />
 /// <reference path="../common/_ts/lib.d.ts" />
 /// <reference path="./_model/MenuItemModel.ts" />
-/// <reference path="./_view/MenuItemView.ts" />
+/// <reference path="./_view/MyMenuView.ts" />
 /// <reference path="./_view/AnotherView.ts" />
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -10,8 +10,6 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-console.log('11111111111111111');
-
 var AppRouter = (function (_super) {
     __extends(AppRouter, _super);
     function AppRouter(options) {
@@ -24,7 +22,7 @@ var AppRouter = (function (_super) {
     }
     AppRouter.prototype.initialize = function () {
         this.menuItemModel = new MenuItemModel();
-        this.menuItemView = new MenuItemView({
+        this.menuItemView = new MyMenuView({
             el: '#MyMenu',
             model: this.menuItemModel
         });

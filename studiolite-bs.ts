@@ -2,16 +2,14 @@
 /// <reference path="../common/_ts/backbone.d.ts" />
 /// <reference path="../common/_ts/lib.d.ts" />
 /// <reference path="./_model/MenuItemModel.ts" />
-/// <reference path="./_view/MenuItemView.ts" />
+/// <reference path="./_view/MyMenuView.ts" />
 /// <reference path="./_view/AnotherView.ts" />
-
-console.log('11111111111111111');
 
 class AppRouter extends Backbone.Router {
 
     routes:any;
     private menuItemModel:MenuItemModel;
-    private menuItemView:MenuItemView;
+    private menuItemView:MyMenuView;
 
     constructor(options?:Backbone.RouterOptions) {
 
@@ -25,7 +23,7 @@ class AppRouter extends Backbone.Router {
 
     initialize() {
         this.menuItemModel = new MenuItemModel();
-        this.menuItemView = new MenuItemView({
+        this.menuItemView = new MyMenuView({
             el: '#MyMenu',
             model: this.menuItemModel
         });
@@ -39,7 +37,6 @@ class AppRouter extends Backbone.Router {
             $('#app').html('List screen').fadeIn();
         });
     }
-
 
     itemDetails(item) {
         var self = this;

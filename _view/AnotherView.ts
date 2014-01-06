@@ -1,26 +1,32 @@
 /// <reference path="../../common/_ts/jquery.d.ts" />
+/// <reference path="../../common/_ts/backbone.d.ts" />
 
-console.log('zzzzzzzzzzzzzzzzzaaaa');
+class AnotherView extends Backbone.View {
 
-class AnotherView {
-    constructor () {
-        var a:number = 1;
-        $('a').click(function(e){
-            alert('clicked')
-
-        })
+    constructor(options?:any) {
+        if (this.el)
+            this.el = options.el;
+        if (this.model)
+            this.model = options.model;
+        super(options);
     }
 
-    showView():any{
-        // alert('another view');
-        console.log('aaaa');
-        console.log('aaaa');
-        console.log('aaaa');
-        console.log('aaaa');
-        console.log('aaaa');
-        console.log('aaaa');
-        console.log('aaaa');
-        console.log('aaaa');
-        console.log('aaaa');
+    initialize() {
+        console.log('init');
+        if (this.model)
+            this.listenTo(this.model, "change", this.render);
+    }
+
+    showView(){
+        console.log('show view')
+    }
+
+    render():Backbone.View {
+        var markup = '<div>' +
+            '<h1>' + this.model.attributes.name + '</h1>' +
+            '<p><span class="label">' + 'aaa' + '</span></p>' +
+            '</div>' + '<h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>        <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>      <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>';
+        this.$el.html(markup);
+        return this;
     }
 }

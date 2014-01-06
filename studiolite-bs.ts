@@ -1,14 +1,13 @@
 /// <reference path="../common/_ts/jquery.d.ts" />
 /// <reference path="../common/_ts/backbone.d.ts" />
-/// <reference path="./_view/MenuItemDetails.ts" />
+/// <reference path="./_view/MenuItemView.ts" />
 /// <reference path="./_view/MenuItemModel.ts" />
 
 class AppRouter extends Backbone.Router {
 
     routes:any;
     private menuItemModel:MenuItemModel;
-    private menuItemView:MenuItemDetails;
-
+    private menuItemView:MenuItemView;
 
     constructor(options?:Backbone.RouterOptions) {
 
@@ -17,13 +16,12 @@ class AppRouter extends Backbone.Router {
             "menu-items/new": "itemForm",
             "menu-items/:item": "itemDetails"
         }
-
         super(options);
     }
 
     initialize() {
         this.menuItemModel = new MenuItemModel();
-        this.menuItemView = new MenuItemDetails({
+        this.menuItemView = new MenuItemView({
             el: '#MyMenu',
             model: this.menuItemModel
         });
@@ -53,6 +51,9 @@ class AppRouter extends Backbone.Router {
     }
 }
 
-var app_router = new AppRouter();
 
-Backbone.history.start();
+$(function () {
+    var app_router = new AppRouter();
+    Backbone.history.start();
+});
+

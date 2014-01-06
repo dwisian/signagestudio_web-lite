@@ -6,22 +6,27 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var MenuItemDetails = (function (_super) {
-    __extends(MenuItemDetails, _super);
-    function MenuItemDetails(viewOptions) {
-        _super.call(this, viewOptions);
-    }
-    MenuItemDetails.prototype.initialize = function () {
+var MenuItemView = (function (_super) {
+    __extends(MenuItemView, _super);
+    function MenuItemView(options) {
+        this.el = options.el;
+        this.model = options.model;
+        _super.call(this, options);
+
         this.listenTo(this.model, "change", this.render);
+    }
+    MenuItemView.prototype.initialize = function () {
+        // this.listenTo(this.model, "change", this.render);
     };
 
-    MenuItemDetails.prototype.render = function () {
+    MenuItemView.prototype.render = function () {
+        console.log('aaaa');
         var markup = '<div>' + '<h1>' + this.model.attributes.name + '</h1>' + '<p><span class="label">' + 'aaa' + '</span></p>' + '</div>' + '<h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>        <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>      <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>';
 
         this.$el.html(markup);
         return this;
     };
-    return MenuItemDetails;
+    return MenuItemView;
 })(Backbone.View);
 ;
-//# sourceMappingURL=MenuItemDetails.js.map
+//# sourceMappingURL=MenuItemView.js.map

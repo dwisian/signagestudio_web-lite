@@ -1,6 +1,6 @@
 /// <reference path="../common/_ts/jquery.d.ts" />
 /// <reference path="../common/_ts/backbone.d.ts" />
-/// <reference path="./_view/MenuItemDetails.ts" />
+/// <reference path="./_view/MenuItemView.ts" />
 /// <reference path="./_view/MenuItemModel.ts" />
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -16,12 +16,11 @@ var AppRouter = (function (_super) {
             "menu-items/new": "itemForm",
             "menu-items/:item": "itemDetails"
         };
-
         _super.call(this, options);
     }
     AppRouter.prototype.initialize = function () {
         this.menuItemModel = new MenuItemModel();
-        this.menuItemView = new MenuItemDetails({
+        this.menuItemView = new MenuItemView({
             el: '#MyMenu',
             model: this.menuItemModel
         });
@@ -51,7 +50,8 @@ var AppRouter = (function (_super) {
     return AppRouter;
 })(Backbone.Router);
 
-var app_router = new AppRouter();
-
-Backbone.history.start();
+$(function () {
+    var app_router = new AppRouter();
+    Backbone.history.start();
+});
 //# sourceMappingURL=studiolite-bs.js.map

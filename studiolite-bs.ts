@@ -24,7 +24,12 @@ class AppRouter extends Backbone.Router {
     initialize() {
         this.menuItemModel = new MenuItemModel({
             id: 1,
-            name: 'aaa'
+            name: 'aaa',
+            opt: 'hello',
+            moreArgs: {
+                x: 1,
+                y: 2
+            }
         });
         this.menuItemView = new MyMenuView({
             el: '#MyMenu',

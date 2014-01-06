@@ -1,12 +1,14 @@
 interface IListItem {
     id: number;
     name: string;
+    opt?: string;
 }
 
 class MenuItemModel extends Backbone.Model implements IListItem {
 
     public id:number;
     public name:string;
+    public opt:string;
 
     getId(): number { return this.get('id'); }
     setId(value: number) { this.set('id', value); }

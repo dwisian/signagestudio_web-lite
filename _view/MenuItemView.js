@@ -13,7 +13,6 @@ var MenuItemView = (function (_super) {
         this.el = options.el;
         this.model = options.model;
         _super.call(this, options);
-        // this.listenTo(this.model, "change", this.render);
     }
     MenuItemView.prototype.initialize = function () {
         this.listenTo(this.model, "change", this.render);
@@ -21,7 +20,6 @@ var MenuItemView = (function (_super) {
 
     MenuItemView.prototype.render = function () {
         var markup = '<div>' + '<h1>' + this.model.attributes.name + '</h1>' + '<p><span class="label">' + 'aaa' + '</span></p>' + '</div>' + '<h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>        <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>      <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>';
-
         this.$el.html(markup);
         return this;
     };

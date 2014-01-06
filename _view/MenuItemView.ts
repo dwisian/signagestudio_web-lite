@@ -8,8 +8,6 @@ class MenuItemView extends Backbone.View {
         this.el = options.el;
         this.model = options.model;
         super(options);
-
-        // this.listenTo(this.model, "change", this.render);
     }
 
     initialize() {
@@ -21,7 +19,6 @@ class MenuItemView extends Backbone.View {
             '<h1>' + this.model.attributes.name + '</h1>' +
             '<p><span class="label">' + 'aaa' + '</span></p>' +
             '</div>' + '<h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>        <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>      <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>';
-
         this.$el.html(markup);
         return this;
     }

@@ -8,7 +8,7 @@
 
 class AppRouter extends Backbone.Router {
 
-    routes:any;
+    private routes:any;
     private menuItemModel:MenuItemModel;
     private menuItemView:MyMenuView;
 
@@ -38,9 +38,10 @@ class AppRouter extends Backbone.Router {
         });
         var anID:number = this.menuItemModel.getId();
         var aName:string = this.menuItemModel.getName();
+        this.menuItemView.showView()
 
         var anotherView:AnotherView = new AnotherView();
-        anotherView.showView();
+        anotherView.showView2();
     }
 
     list() {

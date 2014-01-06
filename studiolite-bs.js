@@ -37,9 +37,10 @@ var AppRouter = (function (_super) {
         });
         var anID = this.menuItemModel.getId();
         var aName = this.menuItemModel.getName();
+        this.menuItemView.showView();
 
         var anotherView = new AnotherView();
-        anotherView.showView();
+        anotherView.showView2();
     };
 
     AppRouter.prototype.list = function () {

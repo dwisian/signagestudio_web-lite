@@ -17,9 +17,10 @@ class AnotherView extends Backbone.View {
             this.listenTo(this.model, "change", this.render);
     }
 
-    showView(){
-        console.log('show view')
+    showView2(){
+        console.log('bb');
     }
+
 
     render():Backbone.View {
         var markup = '<div>' +

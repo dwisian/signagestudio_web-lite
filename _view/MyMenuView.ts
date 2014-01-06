@@ -20,7 +20,7 @@ class MyMenuView extends Backbone.View {
     }
 
     showView(){
-        console.log('show view')
+        console.log('aa');
     }
 
     render():Backbone.View {

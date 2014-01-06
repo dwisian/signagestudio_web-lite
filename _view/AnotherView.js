@@ -21,8 +21,8 @@ var AnotherView = (function (_super) {
             this.listenTo(this.model, "change", this.render);
     };
 
-    AnotherView.prototype.showView = function () {
-        console.log('show view');
+    AnotherView.prototype.showView2 = function () {
+        console.log('bb');
     };
 
     AnotherView.prototype.render = function () {

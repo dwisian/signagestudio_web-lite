@@ -24,7 +24,7 @@ var MyMenuView = (function (_super) {
     };
 
     MyMenuView.prototype.showView = function () {
-        console.log('show view');
+        console.log('aa');
     };
 
     MyMenuView.prototype.render = function () {

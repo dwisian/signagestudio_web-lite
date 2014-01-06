@@ -21,10 +21,9 @@ class MenuItemView extends Backbone.View {
             '<h1>' + this.model.attributes.name + '</h1>' +
             '<p><span class="label">' + 'aaa' + '</span></p>' +
             '</div>' + '<h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>        <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>  <h1>assa</h1>      <h1>assa</h1>            <h1>assa</h1>            <h1>assa</h1>';
-
-        // this.$el.html(markup);
-        $('#app').html(this.el);
+        this.$el.html(markup);
         alert(this.el);
         return this;
     }
 }
+

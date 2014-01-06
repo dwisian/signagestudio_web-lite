@@ -38,8 +38,7 @@ var AppRouter = (function (_super) {
         var self = this;
         $('#app').fadeOut(function () {
             self.menuItemModel.set('name', item);
-
-            // $('#app').html(self.menuItemView.el);
+            $('#app').html(self.menuItemView.el);
             $('#app').fadeIn();
         });
     };

@@ -22,11 +22,17 @@ class AppRouter extends Backbone.Router {
     }
 
     initialize() {
-        this.menuItemModel = new MenuItemModel();
+        this.menuItemModel = new MenuItemModel({
+            id: 1,
+            name: 'aaa'
+        });
         this.menuItemView = new MyMenuView({
             el: '#MyMenu',
             model: this.menuItemModel
         });
+        var anID:number = this.menuItemModel.getId();
+        var aName:string = this.menuItemModel.getName();
+
         var anotherView:AnotherView = new AnotherView();
         anotherView.showView();
     }

@@ -21,11 +21,17 @@ var AppRouter = (function (_super) {
         _super.call(this, options);
     }
     AppRouter.prototype.initialize = function () {
-        this.menuItemModel = new MenuItemModel();
+        this.menuItemModel = new MenuItemModel({
+            id: 1,
+            name: 'aaa'
+        });
         this.menuItemView = new MyMenuView({
             el: '#MyMenu',
             model: this.menuItemModel
         });
+        var anID = this.menuItemModel.getId();
+        var aName = this.menuItemModel.getName();
+
         var anotherView = new AnotherView();
         anotherView.showView();
     };

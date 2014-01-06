@@ -1,6 +1,24 @@
-class MenuItemModel extends Backbone.Model {
-    defaults: any = {
-        id: 0,
-        priority: 0
-    };
+interface IListItem {
+    id: number;
+    name: string;
+}
+
+class MenuItemModel extends Backbone.Model implements IListItem {
+
+    public id:number;
+    public name:string;
+
+    getId(): number { return this.get('id'); }
+    setId(value: number) { this.set('id', value); }
+    setName(value: string) { this.set('name', value); }
+    getName(): string { return this.get('name'); }
+
+    constructor(input: IListItem) {
+        super();
+        for (var key in input) {
+            if (key) {
+                this.set(key, input[key]);
+            }
+        }
+    }
 }

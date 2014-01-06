@@ -6,13 +6,26 @@ var __extends = this.__extends || function (d, b) {
 };
 var MenuItemModel = (function (_super) {
     __extends(MenuItemModel, _super);
-    function MenuItemModel() {
-        _super.apply(this, arguments);
-        this.defaults = {
-            id: 0,
-            priority: 0
-        };
+    function MenuItemModel(input) {
+        _super.call(this);
+        for (var key in input) {
+            if (key) {
+                this.set(key, input[key]);
+            }
+        }
     }
+    MenuItemModel.prototype.getId = function () {
+        return this.get('id');
+    };
+    MenuItemModel.prototype.setId = function (value) {
+        this.set('id', value);
+    };
+    MenuItemModel.prototype.setName = function (value) {
+        this.set('name', value);
+    };
+    MenuItemModel.prototype.getName = function () {
+        return this.get('name');
+    };
     return MenuItemModel;
 })(Backbone.Model);
 //# sourceMappingURL=MenuItemModel.js.map

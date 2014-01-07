@@ -1,6 +1,3 @@
-/// <reference path="../../common/_ts/jquery.d.ts" />
-/// <reference path="../../common/_ts/backbone.d.ts" />
-
 class AnotherView extends Backbone.View {
 
     constructor(options?:any) {

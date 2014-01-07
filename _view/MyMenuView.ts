@@ -1,7 +1,3 @@
-/// <reference path="../../common/_ts/jquery.d.ts" />
-/// <reference path="../../common/_ts/backbone.d.ts" />
-/// <reference path="../../common/_ts/bootstrap.d.ts" />
-
 class MyMenuView extends Backbone.View {
 
     constructor(options?:any) {

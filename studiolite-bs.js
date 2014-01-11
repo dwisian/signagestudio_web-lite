@@ -43,14 +43,8 @@ $(function () {
         return false;
     });
 
-    //$('#propPanel').fadeOut().removeClass('col-md-3');
-    // $('#propPanel').fadeOut();
-    // $('#mainPanel').removeClass('col-md-12').addClass('col-md-9');
-    // $('#propPanel').fadeIn().addClass('col-md-3');
     var h = parseFloat($('body').css('height').replace('px', ''));
     h = h - 115;
-
-    // $('#wrap').height(h);
     $('#propPanel').height(h);
     $('#mainPanel').height(h);
 
@@ -65,10 +59,6 @@ $(function () {
         if (w <= 768) {
             if ($('#propPanel').width() != 0) {
                 console.log('Prop w: ' + $('#propPanel').width());
-
-                // $('#closePanel').trigger('click');
-                // $('#propPanel').fadeOut('1').width('0%');
-                // $('#mainPanelWrap').width('100%');
                 $('#propPanel').fadeOut(1).animate({
                     width: '0%'
                 }, 1, function () {

@@ -2,6 +2,7 @@
 /// <reference path="../common/_tsdef/backbone.d.ts" />
 /// <reference path="../common/_tsdef/lib.d.ts" />
 /// <reference path="../common/_tsdef/bootstrap.d.ts" />
+/// <reference path="../common/_tsdef/underscore.d.ts" />
 /// <reference path="./_model/MenuItemModel.ts" />
 /// <reference path="./_view/MyMenuView.ts" />
 /// <reference path="./_view/AnotherView.ts" />
@@ -52,11 +53,21 @@ $(function () {
     console.log('init size' + h);
 
     $(window).resize(function () {
-        var h = parseFloat($('body').css('height').replace('px', ''));
-        var w = parseFloat($('body').css('width').replace('px', ''));
+        var h = $('body').css('height').replace('px', '');
+        var w = ($('body').css('width').replace('px', ''));
+
         h = h - 115;
 
+        if (w >= 1200) {
+            console.log($('#propPanel').width());
+
+            // alert($('#propPanel').width());
+            if ($('#propPanel').width() < 50)
+                $('#openPanel').trigger('click');
+        }
+
         if (w <= 768) {
+            h = h + 65;
             if ($('#propPanel').width() != 0) {
                 console.log('Prop w: ' + $('#propPanel').width());
                 $('#propPanel').fadeOut(1).animate({
@@ -73,6 +84,7 @@ $(function () {
 
         $('#propPanel').height(h);
         $('#mainPanel').height(h);
+        $('#mainPanelWrap').height(h);
     });
 });
 //# sourceMappingURL=studiolite-bs.js.map
